@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hierarchia_zakaznikov", "hierarchia_zakaznikov\hierarchia_zakaznikov.vcxproj", "{71EC5550-F1F0-480C-A600-A3C0B2CE647B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Debug|x64.ActiveCfg = Debug|x64
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Debug|x64.Build.0 = Debug|x64
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Debug|x86.ActiveCfg = Debug|Win32
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Debug|x86.Build.0 = Debug|Win32
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Release|x64.ActiveCfg = Release|x64
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Release|x64.Build.0 = Release|x64
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Release|x86.ActiveCfg = Release|Win32
+		{71EC5550-F1F0-480C-A600-A3C0B2CE647B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFE2672E-7BDB-49CC-8949-9F879C8CE7F2}
+	EndGlobalSection
+EndGlobal
