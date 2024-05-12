@@ -3,19 +3,19 @@
  *
  * @mainpage ALG_semestralny projekt
  *
- * @brief �vodn&aacute; str&aacute;nka dokument&aacute;cie projektu.
+ * @brief Úvodná stránka dokumentácie projektu.
  *
- * T&aacute;to dokument&aacute;cia poskytuje podrobn&yacute; popis funkci&iacute; a ich o&#x010D;ak&aacute;van&eacute;ho spr&aacute;vania pri pr&aacute;ci s mno�inami ulo�en&yacute;mi v s&uacute;boroch a ich oper&aacute;ci&aacute;ch.
+ * Táto dokumentácia poskytuje podrobný popis funkcií a ich očakávaného správania pri práci s množinami uloženými v súboroch a ich operáciách.
  *
- * @section expectations O&#x010D;ak&aacute;vania
- * - @ref citajMnozinu(const string& subor): Funkcia na&#x010D;&iacute;ta mno�inu zo s&uacute;boru a ulo�&iacute; ju do vektora.
- * - @ref vypisMnozinu(const vector<int>& mnozina): Funkcia vyp&iacute;&scaron;e prvky mno�iny na obrazovku.
- * - @ref prienikMnozin(const vector<int>& A, const vector<int>& B): Funkcia spo�&iacute;ta a vr&aacute;ti prienik dvoch mno�&iacute;n.
+ * @section expectations Očakávania
+ * - @ref citajMnozinu(const string& subor): Funkcia načíta množinu zo súboru a uloží ju do vektora.
+ * - @ref vypisMnozinu(const vector<int>& mnozina): Funkcia vypíše prvky množiny na obrazovku.
+ * - @ref prienikMnozin(const vector<int>& A, const vector<int>& B): Funkcia spočíta a vráti prienik dvoch množín.
  *
  * @section goals Ciele
- * - Poskytn&uacute;� mo�nos� na&#x010D;&iacute;ta� mno�iny zo s&uacute;borov a vykon&aacute;va� s nimi oper&aacute;cie.
- * - Implementova&#x0165; oper&aacute;ciu prieniku mno�&iacute;n.
- * - Zabezpe�i� preh&#x013E;adnos� a efekt&iacute;vnos� k&oacute;du.
+ * - Poskytnúť možnosť načítať množiny zo súborov a vykonávať s nimi operácie.
+ * - Implementovať operáciu prieniku množín.
+ * - Zabezpečiť prehľadnosť a efektívnosť kódu.
  */
 #include <fstream>
 #include <iostream>
@@ -25,11 +25,11 @@
 
 using namespace std;
 
-// Funkcia pre na&#x010D;&iacute;tanie mno�iny zo s&uacute;boru do vektora
+// Funkcia pre načítanie množiny zo súboru do vektora
 /**
- * @brief Na&#x010D;&iacute;ta �&iacute;sla zo s&uacute;boru a ulo�&iacute; ich do vektora.
- * @param nazovSuboru N&aacute;zov s&uacute;boru, z ktor&eacute;ho sa maj&uacute; �&iacute;sla na&#x010D;&iacute;ta�.
- * @param mnozina Vektor, do ktor&eacute;ho sa na&#x010D;&iacute;taj&uacute; �&iacute;sla zo s&uacute;boru.
+ * @brief Načíta čísla zo súboru a uloží ich do vektora.
+ * @param nazovSuboru Názov súboru, z ktorého sa majú čísla načítať.
+ * @param mnozina Vektor, do ktorého sa načítajú čísla zo súboru.
  */
 void nacitajMnozinu(const string& nazovSuboru, vector<int>& mnozina) {
     ifstream subor(nazovSuboru);
@@ -40,25 +40,25 @@ void nacitajMnozinu(const string& nazovSuboru, vector<int>& mnozina) {
     subor.close();
 }
 
-// Funkcia pre vytvorenie prieniku dvoch mno�&iacute;n
+// Funkcia pre vytvorenie prieniku dvoch množín
 /**
- * @brief N&aacute;jde prienik dvoch mno�&iacute;n a vr&aacute;ti ho ako nov&yacute; vektor.
- * @param mnozina1 Prv&aacute; mno�ina.
- * @param mnozina2 Druh&aacute; mno�ina.
- * @return vector<int> Vektor obsahuj&uacute;ci prvky, ktor&eacute; s&uacute; v oboch mno�in&aacute;ch.
+ * @brief Nájde prienik dvoch množín a vráti ho ako nový vektor.
+ * @param mnozina1 Prvá množina.
+ * @param mnozina2 Druhá množina.
+ * @return vector<int> Vektor obsahujúci prvky, ktoré sú v oboch množinách.
  */
 vector<int> prienik(const vector<int>& mnozina1, const vector<int>& mnozina2) {
     vector<int> vysledok;
-    // Pomocou funkcie set_intersection n&aacute;jdeme prienik dvoch trieden&yacute;ch mno�&iacute;n
+    // Pomocou funkcie set_intersection nájdeme prienik dvoch triedených množín
     set_intersection(mnozina1.begin(), mnozina1.end(), mnozina2.begin(), mnozina2.end(), back_inserter(vysledok));
     return vysledok;
 }
 
-// Funkcia pre ulo�enie prieniku do s&uacute;boru
+// Funkcia pre uloženie prieniku do súboru
 /**
- * @brief Ulo�&iacute; prvky vektora do s&uacute;boru.
- * @param nazovSuboru N&aacute;zov s&uacute;boru, do ktor&eacute;ho sa maj&uacute; ulo�i� prvky.
- * @param prienikMnozin Vektor obsahuj&uacute;ci prvky na ulo�enie.
+ * @brief Uloží prvky vektora do súboru.
+ * @param nazovSuboru Názov súboru, do ktorého sa majú uložiť prvky.
+ * @param prienikMnozin Vektor obsahujúci prvky na uloženie.
  */
 void ulozPrienik(const string& nazovSuboru, const vector<int>& prienikMnozin) {
     ofstream subor(nazovSuboru);
@@ -68,14 +68,14 @@ void ulozPrienik(const string& nazovSuboru, const vector<int>& prienikMnozin) {
     subor.close();
 }
 
-// Funkcia pre rozdelenie po�a a n&aacute;jdenie indexu pivotu pod�a algoritmu Hoare
+// Funkcia pre rozdelenie poľa a nájdenie indexu pivotu podľa algoritmu Hoare
 /**
- * @brief Rozdel&iacute; pole na dve �asti okolo pivotu pod�a Hoareho algoritmu.
+ * @brief Rozdelí pole na dve časti okolo pivotu podľa Hoareho algoritmu.
  *
- * @param pole Pole, ktor&eacute; sa m&aacute; rozdeli�.
- * @param lavy Index �av&eacute;ho okraja rozdelenia.
- * @param pravy Index prav&eacute;ho okraja rozdelenia.
- * @return long Index pivotu po rozdelen&iacute;.
+ * @param pole Pole, ktoré sa má rozdeliť.
+ * @param lavy Index ľavého okraja rozdelenia.
+ * @param pravy Index pravého okraja rozdelenia.
+ * @return long Index pivotu po rozdelení.
  */
 long hoareovoDelenie(vector<long>& pole, long lavy, long pravy) {
     long pivot = pole[lavy];
@@ -95,13 +95,13 @@ long hoareovoDelenie(vector<long>& pole, long lavy, long pravy) {
     }
 }
 
-// Funkcia pre rekurz�vne volanie algoritmu QuickSort
+// Funkcia pre rekurzívne volanie algoritmu QuickSort
 /**
- * @brief Rekurz&iacute;vne volanie algoritmu QuickSort na triedenie po�a.
+ * @brief Rekurzívne volanie algoritmu QuickSort na triedenie poľa.
  *
- * @param pole Pole, ktor&eacute; sa m&aacute; zatriedi�.
- * @param lavy Index �av&eacute;ho okraja triedenia.
- * @param pravy Index prav&eacute;ho okraja triedenia.
+ * @param pole Pole, ktoré sa má zatriediť.
+ * @param lavy Index ľavého okraja triedenia.
+ * @param pravy Index pravého okraja triedenia.
  */
 void rekurzivneQuickSort(vector<long>& pole, long lavy, long pravy) {
     if (lavy < pravy) {
@@ -111,11 +111,11 @@ void rekurzivneQuickSort(vector<long>& pole, long lavy, long pravy) {
     }
 }
 
-// Funkcia pre triedenie po�a algoritmom QuickSort
+// Funkcia pre triedenie poľa algoritmom QuickSort
 /**
  * @brief Triedi pole algoritmom QuickSort.
  *
- * @param pole Pole, ktor&eacute; sa m&aacute; zatriedi�.
+ * @param pole Pole, ktoré sa má zatriediť.
  */
 void quickSort(vector<long>& pole) {
     long n = pole.size();
@@ -123,7 +123,7 @@ void quickSort(vector<long>& pole) {
 }
 
 int main() {
-    // Na�&iacute;tanie mno�&iacute;n zo s&uacute;borov
+    // Načítanie množín zo súborov
     vector<int> mnozina1, mnozina2;
     nacitajMnozinu("SourceSeqA.txt", mnozina1);
     nacitajMnozinu("SourceSeqB.txt", mnozina2);
@@ -135,10 +135,10 @@ int main() {
     vector<long> vysledokLong(vysledok.begin(), vysledok.end());
     quickSort(vysledokLong);
 
-    // Ulo�enie prieniku do s&uacute;boru
+    // Uloženie prieniku do súboru
     ulozPrienik("intersection.txt", vector<int>(vysledokLong.begin(), vysledokLong.end()));
 
-    cout << "Prienik bol ulo�en&yacute; do s&uacute;boru intersection.txt" << endl;
+    cout << "Prienik bol uložený do súboru intersection.txt" << endl;
 
     return 0;
 }
